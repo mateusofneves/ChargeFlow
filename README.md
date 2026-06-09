@@ -380,8 +380,16 @@ R$ 34.00
 
 ---
 
-# Autor
+# Integrantes
 
-Mateus Neves
+| Nome | RM |
+|---|---|
+| Mateus de Oliveira Fernandes Neves | RM 572431 |
+| Pedro Soares de Souza | RM 571285 |
+| Paulo Henrique Lira Bilac de Araujo | RM 569496 |
+| Olavo Dadario Vianna Barreto | RM 569272 |
+| Angela Sousa Takezawa | RM 570797 |
+
+---
 
 Projeto acadêmico desenvolvido para a Sprint 2 - Sistema Inteligente de Gerenciamento de Recarga.
