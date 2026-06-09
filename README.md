@@ -359,24 +359,11 @@ R$ 34.00
 * Modularização em C
 * Structs
 * Vetores
-* Ponteiros
 * Manipulação de Funções
 * Controle de Fluxo
 * Simulação de Sistemas Embarcados
 * Controle de Energia
 * Tarifação Dinâmica
-
----
-
-# Possíveis Melhorias Futuras
-
-* Persistência em arquivos
-* Banco de dados
-* Interface gráfica
-* Integração real com OCPP
-* Integração com sensores IoT
-* Dashboard Web
-* Monitoramento em tempo real
 
 ---
 
