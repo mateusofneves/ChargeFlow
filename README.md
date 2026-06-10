@@ -171,10 +171,19 @@ ChargeFlow/
 │   └── sistema.c
 │
 ├── assets/
+│   ├── print-cadastro.png
+│   ├── print-encerra-recarga.png
+│   ├── print-inicia-recarga.png
+│   ├── print-listar-sessoes.png
+│   ├── print-relatorio.png
+│   ├── print-sair.png
+│   └── print-simula-OCPP.png
 │
 ├── docs/
+│   └── ChargeFlow.pdf
 │
 ├── fluxograma/
+│   └── fluxograma-chargeflow.jpeg
 │
 └── README.md
 ```
