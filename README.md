@@ -67,7 +67,7 @@ Ao finalizar uma recarga o sistema:
 
 ## Controle Inteligente de Demanda
 
-O sistema simula uma estação com potência total limitada.
+O sistema simula uma estação de recarga com potência máxima de 100 kW, distribuindo automaticamente a carga entre as sessões ativas para evitar sobrecarga da infraestrutura.
 
 Potência disponível:
 
@@ -367,15 +367,13 @@ R$ 34.00
 
 ---
 
-# Integrantes
-
-| Nome | RM |
-|---|---|
-| Mateus de Oliveira Fernandes Neves | RM 572431 |
-| Pedro Soares de Souza | RM 571285 |
-| Paulo Henrique Lira Bilac de Araujo | RM 569496 |
-| Olavo Dadario Vianna Barreto | RM 569272 |
-| Angela Sousa Takezawa | RM 570797 |
+| Integrante | RM |
+|------------|------------|
+| Mateus de Oliveira Fernandes Neves | RM572431 |
+| Pedro Soares de Souza | RM571285 |
+| Paulo Henrique Lira Bilac de Araujo | RM569496 |
+| Olavo Dadario Vianna Barreto | RM569272 |
+| Angela Sousa Takezawa | RM570797 |
 
 ---
 
