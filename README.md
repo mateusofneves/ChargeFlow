@@ -246,6 +246,11 @@ Funções:
 
 ---
 
+# Fluxograma
+![Fluxograma do sistema](fluxograma/fluxograma-chargeflow.jpeg)
+
+---
+
 # Estrutura de Dados
 
 O sistema utiliza uma estrutura do tipo struct para armazenar informações de cada sessão.
