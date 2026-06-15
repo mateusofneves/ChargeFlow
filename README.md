@@ -391,4 +391,4 @@ R$ 34.00
 
 ---
 
-Projeto acadêmico desenvolvido para a Sprint 2 - Sistema Inteligente de Gerenciamento de Recarga.
+Projeto acadêmico - Sistema Inteligente de Gerenciamento de Recarga.
