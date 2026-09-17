@@ -30,5 +30,6 @@ void cadastrarSessao();
 void listarSessoes();
 void iniciarRecarga();
 void encerrarRecarga();
+void buscarSessao();
 
 #endif

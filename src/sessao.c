@@ -165,3 +165,29 @@ void encerrarRecarga()
     printf("Valor Total: R$ %.2f\n",
            sessao->valorTotal);
 }
+
+void buscarSessao()
+{
+    int id;
+
+    printf("\nDigite o ID da sessao: ");
+    scanf("%d", &id);
+
+    Sessao* sessao = buscarSessaoPorId(id);
+
+    if(sessao == NULL)
+    {
+        printf("\nSessao nao encontrada.\n");
+        return;
+    }
+
+    printf("\n=========== SESSAO ENCONTRADA ===========\n");
+    printf("ID: %d\n", sessao->id);
+    printf("Veiculo: %s\n", sessao->veiculo);
+    printf("Bateria Inicial: %.1f%%\n", sessao->bateriaInicial);
+    printf("Bateria Atual: %.1f%%\n", sessao->bateriaAtual);
+    printf("Energia Consumida: %.2f kWh\n", sessao->energiaConsumida);
+    printf("Tarifa Aplicada: R$ %.2f/kWh\n", sessao->tarifaAplicada);
+    printf("Valor Total: R$ %.2f\n", sessao->valorTotal);
+    printf("Status: %s\n", sessao->ativa ? "ATIVA" : "INATIVA");
+}

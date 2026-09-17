@@ -32,6 +32,9 @@ void menu()
     printf("5 - Controle de Demanda\n");
     printf("6 - Simular OCPP\n");
     printf("7 - Gerar Relatorio\n");
+    printf("8 - Buscar Sessao\n");
+    printf("9 - Ordenar Sessoes\n");
+    printf("10 - Estatisticas\n");
     printf("0 - Sair\n");
 
     printf("\nOpcao: ");

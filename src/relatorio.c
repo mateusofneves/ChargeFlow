@@ -45,3 +45,44 @@ void gerarRelatorio()
     printf("\n====================================\n");
 
 }
+
+void mostrarEstatisticas()
+{
+    if(totalSessoes == 0)
+    {
+        printf("\nNenhuma sessao cadastrada.\n");
+        return;
+    }
+
+    float energiaTotal = 0;
+    float faturamentoTotal = 0;
+    float maiorConsumo = sessoes[0].energiaConsumida;
+    float menorConsumo = sessoes[0].energiaConsumida;
+
+    for(int i = 0; i < totalSessoes; i++)
+    {
+        energiaTotal += sessoes[i].energiaConsumida;
+        faturamentoTotal += sessoes[i].valorTotal;
+
+        if(sessoes[i].energiaConsumida > maiorConsumo)
+        {
+            maiorConsumo = sessoes[i].energiaConsumida;
+        }
+
+        if(sessoes[i].energiaConsumida < menorConsumo)
+        {
+            menorConsumo = sessoes[i].energiaConsumida;
+        }
+    }
+
+    float ticketMedio = faturamentoTotal / totalSessoes;
+
+    printf("\n========= ESTATISTICAS =========\n");
+    printf("\nSessoes cadastradas: %d\n", totalSessoes);
+    printf("Energia fornecida: %.2f kWh\n", energiaTotal);
+    printf("Faturamento: R$ %.2f\n", faturamentoTotal);
+    printf("Ticket medio: R$ %.2f\n", ticketMedio);
+    printf("\nMaior consumo: %.2f kWh\n", maiorConsumo);
+    printf("Menor consumo: %.2f kWh\n", menorConsumo);
+    printf("=================================\n");
+}

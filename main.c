@@ -4,6 +4,7 @@
 #include "include/tarifa.h"
 #include "include/relatorio.h"
 #include "include/sistema.h"
+#include "include/ordenacao.h"
 
 int main()
 {
@@ -46,6 +47,18 @@ int main()
                 gerarRelatorio();
                 break;
 
+            case 8:
+                buscarSessao();
+                break;
+
+            case 9:
+                ordenarSessoes();
+                break;
+
+            case 10:
+                mostrarEstatisticas();
+                break;
+            
             case 0:
                 printf("\nEncerrando sistema...\n");
                 break;
