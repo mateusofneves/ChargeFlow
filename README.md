@@ -6,6 +6,8 @@ O ChargeFlow é um sistema desenvolvido em linguagem C para simular o gerenciame
 
 O projeto foi desenvolvido como parte da Sprint 2, com foco na aplicação de conceitos de programação estruturada, gerenciamento de múltiplas sessões, controle de demanda energética, tarifação dinâmica e geração de relatórios.
 
+Na Sprint 3, o sistema evoluiu para um pequeno sistema de gerenciamento de sessões, incorporando busca, ordenação manual e estatísticas agregadas, aplicando conceitos de estruturas de dados, algoritmos e análise de complexidade (Big-O).
+
 O sistema busca simular o funcionamento de uma estação de carregamento real, permitindo o cadastro de veículos, início e encerramento de recargas, monitoramento de consumo energético e cálculo de custos.
 
 ---
@@ -18,6 +20,9 @@ O sistema busca simular o funcionamento de uma estação de carregamento real, p
 * Simular comunicação com plataforma externa.
 * Gerar relatórios operacionais.
 * Aplicar conceitos de modularização em C.
+* Buscar sessões cadastradas por ID.
+* Ordenar sessões por diferentes critérios.
+* Calcular estatísticas agregadas da estação.
 
 ---
 
@@ -151,6 +156,49 @@ O sistema gera relatórios contendo:
 
 ---
 
+## Busca de Sessão
+
+Permite consultar uma sessão específica pelo ID.
+
+O usuário informa o ID desejado e o sistema exibe todos os dados da sessão correspondente:
+
+* ID
+* Veículo
+* Bateria inicial e atual
+* Energia consumida
+* Tarifa aplicada
+* Valor total
+* Status
+
+A busca é feita através de **busca linear**, percorrendo o vetor de sessões até encontrar o ID correspondente.
+
+---
+
+## Ordenação de Sessões
+
+Permite reorganizar as sessões cadastradas de acordo com um critério escolhido pelo usuário:
+
+* ID
+* Energia consumida
+* Valor total (custo)
+
+A ordenação é feita através de uma implementação manual do algoritmo **Bubble Sort**, sem uso de funções prontas de biblioteca.
+
+---
+
+## Estatísticas da Estação
+
+Calcula indicadores agregados com base em todas as sessões cadastradas:
+
+* Quantidade total de sessões
+* Energia total fornecida
+* Faturamento total
+* Custo médio das sessões (ticket médio)
+* Maior consumo registrado
+* Menor consumo registrado
+
+---
+
 # Estrutura do Projeto
 
 ```text
@@ -162,13 +210,15 @@ ChargeFlow/
 │   ├── sessao.h
 │   ├── tarifa.h
 │   ├── relatorio.h
-│   └── sistema.h
+│   ├── sistema.h
+│   └── ordenacao.h
 │
 ├── src/
 │   ├── sessao.c
 │   ├── tarifa.c
 │   ├── relatorio.c
-│   └── sistema.c
+│   ├── sistema.c
+│   └── ordenacao.c
 │
 ├── assets/
 │   ├── print-cadastro.png
@@ -209,6 +259,7 @@ Funções:
 * iniciarRecarga()
 * encerrarRecarga()
 * buscarSessaoPorId()
+* buscarSessao()
 
 ---
 
@@ -225,11 +276,12 @@ Funções:
 
 ## relatorio.c
 
-Responsável pela geração de relatórios operacionais.
+Responsável pela geração de relatórios operacionais e estatísticas.
 
 Funções:
 
 * gerarRelatorio()
+* mostrarEstatisticas()
 
 ---
 
@@ -243,6 +295,16 @@ Funções:
 * limparTela()
 * pausarSistema()
 * simularOCPP()
+
+---
+
+## ordenacao.c
+
+Responsável pela ordenação das sessões cadastradas.
+
+Funções:
+
+* ordenarSessoes()
 
 ---
 
@@ -273,6 +335,26 @@ typedef struct
 
 } Sessao;
 ```
+
+As sessões são armazenadas em um vetor de estruturas (`Sessao sessoes[MAX_SESSOES]`), permitindo o gerenciamento de múltiplas recargas simultaneamente.
+
+---
+
+# Algoritmos Implementados
+
+## Busca Linear
+
+Utilizada para localizar uma sessão pelo ID, percorrendo o vetor de sessões posição por posição até encontrar uma correspondência.
+
+**Complexidade:** O(n)
+
+---
+
+## Bubble Sort
+
+Utilizado para ordenar o vetor de sessões por ID, energia consumida ou valor total, através de comparações e trocas sucessivas entre elementos adjacentes, implementado manualmente sem funções prontas de biblioteca.
+
+**Complexidade:** O(n²)
 
 ---
 
@@ -367,6 +449,58 @@ R$ 34.00
 
 ---
 
+## Buscar Sessão
+
+```text
+Digite o ID da sessao:
+1
+
+=========== SESSAO ENCONTRADA ===========
+ID: 1
+Veiculo: BYD Dolphin
+Bateria Inicial: 40.0%
+Bateria Atual: 56.0%
+Energia Consumida: 20.00 kWh
+Tarifa Aplicada: R$ 1.70/kWh
+Valor Total: R$ 34.00
+Status: INATIVA
+```
+
+---
+
+## Ordenar Sessões
+
+```text
+===== ORDENAR SESSOES =====
+1 - Por ID
+2 - Por energia consumida
+3 - Por valor total (custo)
+
+Escolha o criterio: 2
+
+Sessoes ordenadas com sucesso!
+```
+
+---
+
+## Estatísticas
+
+```text
+========= ESTATISTICAS =========
+
+Sessoes cadastradas: 3
+Energia fornecida: 68.50 kWh
+Faturamento: R$ 92.40
+
+Ticket medio: R$ 30.80
+
+Maior consumo: 35.00 kWh
+Menor consumo: 13.50 kWh
+=================================
+```
+
+---
+
 # Conceitos Aplicados
 
 * Programação Estruturada
@@ -378,6 +512,9 @@ R$ 34.00
 * Simulação de Sistemas Embarcados
 * Controle de Energia
 * Tarifação Dinâmica
+* Algoritmos de Busca (Busca Linear)
+* Algoritmos de Ordenação (Bubble Sort)
+* Análise de Complexidade (Notação Big-O)
 
 ---
 
