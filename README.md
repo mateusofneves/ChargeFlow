@@ -525,6 +525,7 @@ Menor consumo: 13.50 kWh
 | Paulo Henrique Lira Bilac de Araujo | RM569496 |
 | Olavo Dadario Vianna Barreto | RM569272 |
 | Angela Sousa Takezawa | RM570797 |
+| Jhon Cutile Titirico | RM571976 |
 
 ---
 
